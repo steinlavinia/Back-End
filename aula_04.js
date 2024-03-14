@@ -38,3 +38,26 @@ let Apartamento = new Imovel()
 
 console.log(`Casa \n${Casa.exibirInformacoes()}`);
 console.log(`Apartamento \n${Apartamento.exibirInformacoes()}`);
+
+class Veiculo {
+    marca;
+    modelo;
+    ano;
+
+    exibirdetalhes() {
+        return(`Marca: ${this.quartos}. \nModelo: ${this.tipo}. \nAno: ${this.endereco}.`)
+    };
+};
+
+let Carro = new Veiculo()
+    Carro.marca = "Toyota"
+    Carro.modelo = "Corolla"
+    Carro.ano = 2022
+
+let Moto = new Imovel()
+    Moto.marca = "Honda"
+    Moto.modelo = "CBR 600RR"
+    Moto.ano = 2021
+
+console.log(`Carro \n${Carro.exibirInformacoes()}`);
+console.log(`Moto \n${Moto.exibirInformacoes()}`);
