@@ -1,3 +1,8 @@
+const x = '1' + 1 + "1";
+console.log(x);
+
+//Exercício While
+
 import rl from 'readline-sync';
 
 let num = rl.questionInt('Informe um numero para calcular a Tabuada: ');
@@ -7,11 +12,7 @@ while (cont <= 10) {
     let resultado = num * cont;
     console.log(`${num} x ${cont} = ${resultado}`);
     cont++;
-}
-
-
-const x = '1' + 1 + "1";
-console.log(x);
+};
 
 
 let numAlunos = rl.questionInt("Informe o número de alunos da turma: ");
@@ -40,3 +41,28 @@ while (contadorAlunos <= numAlunos) {
 
 let mediaGeralTurma = somaMedias / numAlunos;
 console.log(`Média geral da turma: ${mediaGeralTurma.toFixed(2)}`);
+
+//Exercícios Do While
+
+import rl, { questionInt } from 'readline-sync';
+
+const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+
+let tentativa;
+
+do {
+    tentativa = rl.questionInt("Tente adivinhar o número (entre 1 e 100):");
+
+    if (tentativa === numeroAleatorio) {
+        console.log("Parabéns! Você adivinhou o número correto.");
+    } else if (tentativa < numeroAleatorio) {
+        console.log("Tente um número maior.");
+    } else {
+        console.log("Tente um número menor.");
+    }
+
+} while (tentativa !== numeroAleatorio);
+
+//Exercícios For
+
+//Exercícios For In e For Of
