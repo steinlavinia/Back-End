@@ -100,3 +100,31 @@ for (let i = 1; i <= 2; i++) {
 };
 
 //Exercícios For In e For Of
+
+console.log("\t--- Exercício 01 ---");
+
+const pessoa = {
+    nome: "João",
+    idade: 30,
+    cidade: "São Paulo"
+};
+
+for (let chave in pessoa) {
+    console.log(`${chave}: ${pessoa[chave]}`);
+};
+
+
+console.log("\n\t--- Exercício 02 ---");
+const cores = ["Azul", "Branco", "Amarelo", "Verde", "Vermelho"];
+
+for (let cor of cores) {
+    console.log(cor);
+};
+
+
+console.log("\n\t--- Exercício 03 ---")
+const string = "JavaScript";
+
+for (let caractere of string) {
+    console.log(caractere);
+};
