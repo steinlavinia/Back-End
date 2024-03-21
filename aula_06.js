@@ -14,8 +14,7 @@ while (cont <= 10) {
     cont++;
 };
 
-
-let numAlunos = rl.questionInt("Informe o número de alunos da turma: ");
+let numAlunos = rl.questionInt("Informe o numero de alunos da turma: ");
 
 let somaMedias = 0;
 let contadorAlunos = 1;
@@ -35,16 +34,14 @@ while (contadorAlunos <= numAlunos) {
     let mediaAluno = somaNotas / 4;
     somaMedias += mediaAluno;
 
-    console.log(`Média do aluno ${contadorAlunos}: ${mediaAluno.toFixed(2)}`);
+    console.log(`Media do aluno ${contadorAlunos}: ${mediaAluno.toFixed(2)}`);
     contadorAlunos++;
 };
 
 let mediaGeralTurma = somaMedias / numAlunos;
-console.log(`Média geral da turma: ${mediaGeralTurma.toFixed(2)}`);
+console.log(`Media geral da turma: ${mediaGeralTurma.toFixed(2)}`);
 
 //Exercícios Do While
-
-import rl, { questionInt } from 'readline-sync';
 
 const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
 
@@ -54,15 +51,52 @@ do {
     tentativa = rl.questionInt("Tente adivinhar o número (entre 1 e 100):");
 
     if (tentativa === numeroAleatorio) {
-        console.log("Parabéns! Você adivinhou o número correto.");
+        console.log("Parabens! Você adivinhou o numero correto.");
     } else if (tentativa < numeroAleatorio) {
-        console.log("Tente um número maior.");
+        console.log("Tente um numero maior.");
     } else {
-        console.log("Tente um número menor.");
+        console.log("Tente um numero menor.");
     }
 
 } while (tentativa !== numeroAleatorio);
 
 //Exercícios For
+
+let anterior = 0;
+let atual = 1;
+
+console.log(anterior);
+console.log(atual);
+
+for (let i = 3; i <= 20; i++) {
+    let proximo = anterior + atual;
+    console.log(proximo);
+
+    anterior = atual;
+    atual = proximo;
+};
+
+for (let i = 1; i <= 2; i++) {
+    // Ler o nome e o salário bruto da pessoa
+    let nome = rl.question(`Informe o nome da ${i}ª pessoa: `);
+    let salario = rl.questionFloat(`Informe o salário de ${nome}: `);
+
+    let impostoRenda = 0;
+
+    if (salario <= 2100) {
+        impostoRenda = 0;
+    } else if (salario <= 2800) {
+        impostoRenda = salario * 0.075;
+    } else if (salario <= 3750) {
+        impostoRenda = salario * 0.15;
+    } else if (salario <= 4660) {
+        impostoRenda = salario * 0.225;
+    } else {
+        impostoRenda = salario * 0.275;
+    };
+
+    console.log(`\nImposto de Renda a ser pago`);
+    console.log(`Nome: ${nome} \nImposto de Renda: R$ ${impostoRenda.toFixed(2)}\n`);
+};
 
 //Exercícios For In e For Of
