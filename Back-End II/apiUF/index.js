@@ -24,7 +24,7 @@ app.get('/ufs/:iduf', (req, res) => {
     if (uf) {
         res.json(uf); 
     } else {
-        res.status(404).json({'erro': mensagemErro})
+        res.status(404).json({erro: mensagemErro})
     }
 });
 
