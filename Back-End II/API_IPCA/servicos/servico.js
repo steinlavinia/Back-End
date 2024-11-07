@@ -10,5 +10,5 @@ export const buscarIpcaPorId = (id) => {
 };
 
 export const buscarIpcaPorAno = (anoIpca) => {
-    return historicoInflacao.filter(ipca => ipca.ano.getFullYear().includes(anoIpca.getFullYear()));
+    return historicoInflacao.filter(ipca => ipca.ano == anoIpca);
 };
