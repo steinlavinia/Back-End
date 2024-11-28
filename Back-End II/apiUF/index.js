@@ -18,7 +18,7 @@ app.get('/ufs/:iduf', (req, res) => {
     if (uf) {
         res.json(uf);
     } else if (isNaN(parseInt(req.params.iduf))) {
-        res.status(400).send({"erro": "Requisição inválida"});
+        res.status(400).send({"erro": "Requisição inválida!"});
     } else{
         res.status(404).send({"erro": "UF não encontrada"});
     }
