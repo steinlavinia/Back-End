@@ -1,5 +1,5 @@
 import express from 'express';
-import { retornaCampeonato } from './servico/retornaCampeonatos_servico';
+import { retornaCampeonatos } from './servico/retornaCampeonatos_servico.js';
 //import pool from './servico/conexao.js';
 
 const app = express();
@@ -9,7 +9,7 @@ app.get('/campeonatos', async (req, res) => {
     res.json(campeonatos);
 })
 
-app.listen(9000, async () => {
+app.listen(9000, () => {
     const data = new Date();
     console.log('Servidor node iniciado em: ' + data);
     
