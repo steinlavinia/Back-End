@@ -18,7 +18,6 @@ app.get('/campeonatos', async (req, res) => {
     } else if (typeof time !== 'undefined') {
         campeonatos = await retornaCampeonatosTime(time);
     }
-
     if (campeonatos.length > 0) {
         res.json(campeonatos);
     } else {
