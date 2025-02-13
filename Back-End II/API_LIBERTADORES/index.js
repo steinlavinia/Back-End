@@ -29,7 +29,7 @@ app.patch('/campeonatos/:id', async (req, res) => {
             res.status(400).send('Registro não encontrado!'); 
         }
     }
-})
+});
 
 app.put('/campeonatos/:id', async (req, res) => {
     const {id} = req.params;
@@ -45,7 +45,7 @@ app.put('/campeonatos/:id', async (req, res) => {
             res.status(400).send('Registro não encontrado!'); 
         }
     }
-})
+});
 
 app.post('/campeonatos', async (req,res) => {
     const campeao = req.body.campeao;
