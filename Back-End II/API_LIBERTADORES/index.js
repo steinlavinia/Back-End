@@ -3,11 +3,23 @@ import cors from 'cors';
 import { retornaCampeonatos, retornaCampeonatosID, retornaCampeonatosAno, retornaCampeonatosTime } from './servico/retornaCampeonatos_servico.js';
 import { cadastroCampeonato } from './servico/cadastroCampeonato_servico.js'
 import { atualizaCampeonato, atualizaCampeonatoParcial } from './servico/atualizaCampeonato_servico.js';
+import { deletaCampeonato } from "./servico/deletaCampeonato_servico.js";
 //import pool from './servico/conexao.js';
 
 const app = express();
 app.use(cors());
 app.use(express.json()); //Suporte para JSON no corpo da requisição
+
+app.delete('/campeonatos/:id', async (req, res) => {
+    const {id} = req.params;
+    const {resultado} = await deletaCampeonato(id);
+    
+    if (resultado.affectedRows > 0) {
+        res.status(202).send('Registro deletado com sucesso');
+    } else {
+        res.status(404).send('Registro não encontrado');
+    }
+});
 
 app.patch('/campeonatos/:id', async (req, res) => {
     const {id} = req.params;
@@ -55,7 +67,7 @@ app.post('/campeonatos', async (req,res) => {
     await cadastroCampeonato(campeao, vice, ano);
 
     res.status(204).send({'Mensagem': 'Cadastro efetivado com sucesso!'});
-})
+});
 
 app.get('/campeonatos', async (req, res) => {
     let campeonatos;
@@ -75,7 +87,7 @@ app.get('/campeonatos', async (req, res) => {
     } else {
         res.status(404).json({mensagem: 'Nenhum campeonato encontrado'});
     }
-})
+});
 
 app.get('/campeonatos/:id', async (req, res) => {
     const id = parseInt(req.params.id);
@@ -96,4 +108,4 @@ app.listen(9000, () => {
     // console.log(conexao.threadId);
 
     // conexao.release();
-})
+});
