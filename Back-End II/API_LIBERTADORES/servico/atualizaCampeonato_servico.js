@@ -20,6 +20,7 @@ export async function atualizaCampeonatoParcial(id, campos) {
     valores.push(id);
 
     const [resposta] = await conexao.execute(query, valores);
+    
     console.log(resposta);
     conexao.release();
     return resposta;
