@@ -3,7 +3,7 @@ import cors from 'cors';
 
 import { validaUsuario } from "./scr/validacao";
 
-import { cadastroLeads } from "./scr/servico/cadastro_servico.js";
+import { cadastroUsuario } from "./scr/servico/cadastro_servico.js";
 
 const app = express();
 
